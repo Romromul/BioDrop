@@ -1,45 +1,40 @@
-## [1.143.4](https://github.com/EddieHubCommunity/LinkFree/compare/v1.143.3...v1.143.4) (2023-06-18)
+## [1.144.13](https://github.com/EddieHubCommunity/LinkFree/compare/v1.144.12...v1.144.13) (2023-06-24)
 
 
 ### Bug Fixes
 
-* remove alert animation ([#7662](https://github.com/EddieHubCommunity/LinkFree/issues/7662)) ([e39065b](https://github.com/EddieHubCommunity/LinkFree/commit/e39065b940edccd08f13bad54bfc5614954d6289))
+* switch to useRouter from next/router ([#7757](https://github.com/EddieHubCommunity/LinkFree/issues/7757)) ([daa37fa](https://github.com/EddieHubCommunity/LinkFree/commit/daa37fa74a99c29fda5fa87784104f8a2c356d56))
 
 
 
-## [1.143.3](https://github.com/EddieHubCommunity/LinkFree/compare/v1.143.2...v1.143.3) (2023-06-18)
-
-
-### Bug Fixes
-
-* remove animate pulse from alert ([#7639](https://github.com/EddieHubCommunity/LinkFree/issues/7639)) ([abdf3ea](https://github.com/EddieHubCommunity/LinkFree/commit/abdf3ea3f8fd2767021f2e82f6c641a69f498c9f))
+## [1.144.12](https://github.com/EddieHubCommunity/LinkFree/compare/v1.144.11...v1.144.12) (2023-06-24)
 
 
 
-## [1.143.2](https://github.com/EddieHubCommunity/LinkFree/compare/v1.143.1...v1.143.2) (2023-06-18)
+## [1.144.11](https://github.com/EddieHubCommunity/LinkFree/compare/v1.144.10...v1.144.11) (2023-06-24)
 
 
 ### Bug Fixes
 
-*  statistics and playground base url ([#7640](https://github.com/EddieHubCommunity/LinkFree/issues/7640)) ([8854b4e](https://github.com/EddieHubCommunity/LinkFree/commit/8854b4e491ec70010b2a4517af857abb4cc10b28))
+* update dependencies ([#7755](https://github.com/EddieHubCommunity/LinkFree/issues/7755)) ([c664a27](https://github.com/EddieHubCommunity/LinkFree/commit/c664a27ab88ce800ad84f46ddb2b940376d0f3fc))
 
 
 
-## [1.143.1](https://github.com/EddieHubCommunity/LinkFree/compare/v1.143.0...v1.143.1) (2023-06-18)
+## [1.144.10](https://github.com/EddieHubCommunity/LinkFree/compare/v1.144.9...v1.144.10) (2023-06-24)
 
 
 ### Bug Fixes
 
-* update the LinkFree CLI version ([#7638](https://github.com/EddieHubCommunity/LinkFree/issues/7638)) ([bef374c](https://github.com/EddieHubCommunity/LinkFree/commit/bef374c6dbe8c7ae24b46546aead73ee1faa3ae1))
+* move newsletter to own page ([#7758](https://github.com/EddieHubCommunity/LinkFree/issues/7758)) ([0a5676f](https://github.com/EddieHubCommunity/LinkFree/commit/0a5676fcb8188f7e49bf299224a71c860f45b046))
 
 
 
-# [1.143.0](https://github.com/EddieHubCommunity/LinkFree/compare/v1.142.6...v1.143.0) (2023-06-16)
+## [1.144.9](https://github.com/EddieHubCommunity/LinkFree/compare/v1.144.8...v1.144.9) (2023-06-23)
 
 
-### Features
+### Bug Fixes
 
-* search by location ([#7535](https://github.com/EddieHubCommunity/LinkFree/issues/7535)) ([4949dc3](https://github.com/EddieHubCommunity/LinkFree/commit/4949dc395d9c15ce18e67c0310012fee4a17304c))
+* deploy file count ([#7738](https://github.com/EddieHubCommunity/LinkFree/issues/7738)) ([6ab09bf](https://github.com/EddieHubCommunity/LinkFree/commit/6ab09bfe29a3d6377b3bddad54456e04f0bd833a))
 
 
 
