@@ -1,40 +1,50 @@
-## [1.144.13](https://github.com/EddieHubCommunity/LinkFree/compare/v1.144.12...v1.144.13) (2023-06-24)
+## [1.149.3](https://github.com/EddieHubCommunity/LinkFree/compare/v1.149.2...v1.149.3) (2023-07-02)
 
 
 ### Bug Fixes
 
-* switch to useRouter from next/router ([#7757](https://github.com/EddieHubCommunity/LinkFree/issues/7757)) ([daa37fa](https://github.com/EddieHubCommunity/LinkFree/commit/daa37fa74a99c29fda5fa87784104f8a2c356d56))
+* link and linkstats relationship ([#7913](https://github.com/EddieHubCommunity/LinkFree/issues/7913)) ([1d33148](https://github.com/EddieHubCommunity/LinkFree/commit/1d33148c7626df7f0ed70de0dbd2c93fb7ef21bc))
 
 
 
-## [1.144.12](https://github.com/EddieHubCommunity/LinkFree/compare/v1.144.11...v1.144.12) (2023-06-24)
-
-
-
-## [1.144.11](https://github.com/EddieHubCommunity/LinkFree/compare/v1.144.10...v1.144.11) (2023-06-24)
+## [1.149.2](https://github.com/EddieHubCommunity/LinkFree/compare/v1.149.1...v1.149.2) (2023-07-01)
 
 
 ### Bug Fixes
 
-* update dependencies ([#7755](https://github.com/EddieHubCommunity/LinkFree/issues/7755)) ([c664a27](https://github.com/EddieHubCommunity/LinkFree/commit/c664a27ab88ce800ad84f46ddb2b940376d0f3fc))
+* profiles with no events ([#7906](https://github.com/EddieHubCommunity/LinkFree/issues/7906)) ([4a289b8](https://github.com/EddieHubCommunity/LinkFree/commit/4a289b8cf8b58af8aecf8ff76af6d24e68da4b03))
 
 
 
-## [1.144.10](https://github.com/EddieHubCommunity/LinkFree/compare/v1.144.9...v1.144.10) (2023-06-24)
-
-
-### Bug Fixes
-
-* move newsletter to own page ([#7758](https://github.com/EddieHubCommunity/LinkFree/issues/7758)) ([0a5676f](https://github.com/EddieHubCommunity/LinkFree/commit/0a5676fcb8188f7e49bf299224a71c860f45b046))
-
-
-
-## [1.144.9](https://github.com/EddieHubCommunity/LinkFree/compare/v1.144.8...v1.144.9) (2023-06-23)
+## [1.149.1](https://github.com/EddieHubCommunity/LinkFree/compare/v1.149.0...v1.149.1) (2023-07-01)
 
 
 ### Bug Fixes
 
-* deploy file count ([#7738](https://github.com/EddieHubCommunity/LinkFree/issues/7738)) ([6ab09bf](https://github.com/EddieHubCommunity/LinkFree/commit/6ab09bfe29a3d6377b3bddad54456e04f0bd833a))
+* random profile text ([#7905](https://github.com/EddieHubCommunity/LinkFree/issues/7905)) ([dd9b971](https://github.com/EddieHubCommunity/LinkFree/commit/dd9b9716788c301d6eaff4629b31aa8edf73d51e))
+
+
+
+# [1.149.0](https://github.com/EddieHubCommunity/LinkFree/compare/v1.148.0...v1.149.0) (2023-07-01)
+
+
+### Features
+
+* testimonial ordering ([#7884](https://github.com/EddieHubCommunity/LinkFree/issues/7884)) ([d65ba48](https://github.com/EddieHubCommunity/LinkFree/commit/d65ba48937b542927cb9b46ea6a75a4244168c3e))
+
+
+
+# [1.148.0](https://github.com/EddieHubCommunity/LinkFree/compare/v1.147.10...v1.148.0) (2023-07-01)
+
+
+### Bug Fixes
+
+* docs links ([#7902](https://github.com/EddieHubCommunity/LinkFree/issues/7902)) ([1b9a529](https://github.com/EddieHubCommunity/LinkFree/commit/1b9a529f0117d92682c5c2a3780c42ff815d9154))
+
+
+### Features
+
+* random profile ([#7900](https://github.com/EddieHubCommunity/LinkFree/issues/7900)) ([f2aed8d](https://github.com/EddieHubCommunity/LinkFree/commit/f2aed8dccba992e3bb889149854ded52b0283bb5)), closes [#7617](https://github.com/EddieHubCommunity/LinkFree/issues/7617) [#7558](https://github.com/EddieHubCommunity/LinkFree/issues/7558)
 
 
 
