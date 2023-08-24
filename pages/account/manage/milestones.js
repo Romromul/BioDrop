@@ -1,14 +1,16 @@
 import { authOptions } from "../../api/auth/[...nextauth]";
 import { getServerSession } from "next-auth/next";
 import DocumentPlusIcon from "@heroicons/react/24/outline/DocumentPlusIcon";
+import { useRouter } from "next/router";
 
 import logger from "@config/logger";
 import PageHead from "@components/PageHead";
 import Page from "@components/Page";
-import Navigation from "@components/account/manage/navigation";
+import Navigation from "@components/account/manage/Navigation";
 import { getMilestonesApi } from "pages/api/account/manage/milestones";
 import Button from "@components/Button";
 import UserMilestones from "@components/user/UserMilestones";
+import Alert from "@components/Alert";
 
 export async function getServerSideProps(context) {
   const session = await getServerSession(context.req, context.res, authOptions);
@@ -40,6 +42,24 @@ export async function getServerSideProps(context) {
 }
 
 export default function ManageMilestones({ milestones }) {
+  const router = useRouter();
+  const { alert } = router.query;
+
+  const alerts = {
+    deleted: {
+      type: "success",
+      message: "Milestone Deleted Successfully",
+    },
+    created: {
+      type: "success",
+      message: "Milestone Created Successfully",
+    },
+    updated: {
+      type: "success",
+      message: "Milestone Updated Successfully",
+    },
+  };
+
   return (
     <>
       <PageHead
@@ -48,6 +68,10 @@ export default function ManageMilestones({ milestones }) {
       />
 
       <Page>
+        {alert && (
+          <Alert type={alerts[alert].type} message={alerts[alert].message} />
+        )}
+
         <Navigation />
 
         <Button href="/account/manage/milestone">

@@ -5,17 +5,20 @@ import { authOptions } from "../../api/auth/[...nextauth]";
 import { getServerSession } from "next-auth/next";
 import { useState } from "react";
 
+import { clientEnv } from "@config/schemas/clientSchema";
+import config from "@config/app.json";
 import logger from "@config/logger";
 import PageHead from "@components/PageHead";
 import Page from "@components/Page";
 import Alert from "@components/Alert";
-import Navigation from "@components/account/manage/navigation";
+import Navigation from "@components/account/manage/Navigation";
 import { getUserApi } from "pages/api/profiles/[username]";
 import UserProfile from "@components/user/UserProfile";
 import Input from "@components/form/Input";
 import Select from "@components/form/Select";
 import Button from "@components/Button";
 import Notification from "@components/Notification";
+import Textarea from "@components/form/Textarea";
 
 export async function getServerSideProps(context) {
   const session = await getServerSession(context.req, context.res, authOptions);
@@ -51,7 +54,7 @@ export async function getServerSideProps(context) {
   }
 
   return {
-    props: { profile, fileExists, BASE_URL: process.env.NEXT_PUBLIC_BASE_URL },
+    props: { profile, fileExists, BASE_URL: clientEnv.NEXT_PUBLIC_BASE_URL },
   };
 }
 
@@ -68,7 +71,12 @@ export default function Profile({ BASE_URL, profile, fileExists }) {
     profile.bio || "Have a look at my links below..."
   );
   const [tags, setTags] = useState(profile.tags || ["EddieHub"]);
-  const layouts = ["classic", "inline"];
+  const layouts = config.layouts.map(l => {
+    return {
+      value: l,
+      label: l
+    }
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -91,6 +99,7 @@ export default function Profile({ BASE_URL, profile, fileExists }) {
         ).join(", ")}`,
       });
     }
+    setTags(update.tags);
 
     return setShowNotification({
       show: true,
@@ -108,14 +117,14 @@ export default function Profile({ BASE_URL, profile, fileExists }) {
       />
 
       <Page>
+        <Navigation />
+
         {fileExists && (
           <Alert
             type="warning"
             message={`"data/${profile.username}.json" exists, please remove this file and your folder via a Pull Request as it will no longer be needed because you are managing your account via these forms.`}
           />
         )}
-
-        <Navigation />
 
         <Notification
           show={showNotification.show}
@@ -133,7 +142,7 @@ export default function Profile({ BASE_URL, profile, fileExists }) {
 
             <section
               aria-labelledby="preview-data-heading"
-              className="bg-primary-low px-4 pb-10 pt-16 sm:px-6 lg:col-start-2 lg:row-start-1 lg:bg-transparent lg:px-0 lg:pb-16"
+              className="bg-primary-low px-4 pb-10 pt-16 sm:px-6 lg:col-start-2 lg:row-start-1 bg-transparent lg:px-0 lg:pb-16"
             >
               <div className="mx-auto max-w-lg lg:max-w-none">
                 <UserProfile
@@ -158,7 +167,7 @@ export default function Profile({ BASE_URL, profile, fileExists }) {
                       readOnly={true}
                     />
                   </div>
-                  <p className="text-sm text-primary-low-medium">
+                  <p className="text-sm text-primary-medium-low dark:text-primary-low-high">
                     GitHub username is part of your Profile URL:{" "}
                     {`${BASE_URL}/${profile.username}`}
                   </p>
@@ -196,7 +205,7 @@ export default function Profile({ BASE_URL, profile, fileExists }) {
                     </div>
 
                     <div className="col-span-3 sm:col-span-4">
-                      <Input
+                      <Textarea
                         name="bio"
                         label="Bio"
                         value={bio}
@@ -205,7 +214,7 @@ export default function Profile({ BASE_URL, profile, fileExists }) {
                         minLength="2"
                         maxLength="256"
                       />
-                      <p className="text-sm text-primary-low-medium">
+                      <p className="text-sm text-primary-medium-low dark:text-primary-low-high">
                         You can use Markdown syntax.
                       </p>
                     </div>
@@ -217,7 +226,7 @@ export default function Profile({ BASE_URL, profile, fileExists }) {
                         value={tags}
                         onChange={(e) => setTags(e.target.value.split(","))}
                       />
-                      <p className="text-sm text-primary-low-medium">
+                      <p className="text-sm text-primary-medium-low dark:text-primary-low-high">
                         Separate tags with commas (no space required).
                       </p>
                     </div>

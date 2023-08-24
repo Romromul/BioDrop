@@ -2,7 +2,13 @@ import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import XMarkIcon from "@heroicons/react/24/outline/XMarkIcon";
 
-export default function Modal({ show = false, setShow, title, children }) {
+export default function Modal({
+  show = false,
+  setShow,
+  title,
+  children,
+  styles = "",
+}) {
   return (
     <Transition.Root show={show} as={Fragment}>
       <Dialog as="div" className="relative z-50" onClose={setShow}>
@@ -18,7 +24,7 @@ export default function Modal({ show = false, setShow, title, children }) {
           <div className="fixed inset-0 bg-primary-low-medium bg-opacity-75 transition-opacity" />
         </Transition.Child>
 
-        <div className="fixed inset-0 z-10 overflow-y-auto">
+        <div className={`fixed inset-0 z-10 overflow-y-auto ${styles}`}>
           <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
             <Transition.Child
               as={Fragment}
@@ -33,7 +39,7 @@ export default function Modal({ show = false, setShow, title, children }) {
                 <div className="absolute right-0 top-0 hidden pr-4 pt-4 sm:block">
                   <button
                     type="button"
-                    className="rounded-md bg-white dark:bg-primary-high text-primary-low-medium hover:text-primary-low-medium focus:outline-none focus:ring-2 focus:ring-secondary-medium-low focus:ring-offset-2"
+                    className="rounded-md bg-white dark:bg-primary-high text-primary-low-medium hover:text-primary-low-medium focus:outline-none hover:ring-2 hover:ring-secondary-medium-low hover:ring-offset-2"
                     onClick={() => setShow(false)}
                   >
                     <span className="sr-only">Close</span>

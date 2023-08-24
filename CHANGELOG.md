@@ -1,50 +1,45 @@
-## [1.149.3](https://github.com/EddieHubCommunity/LinkFree/compare/v1.149.2...v1.149.3) (2023-07-02)
+## [1.178.8](https://github.com/EddieHubCommunity/LinkFree/compare/v1.178.7...v1.178.8) (2023-08-23)
 
 
 ### Bug Fixes
 
-* link and linkstats relationship ([#7913](https://github.com/EddieHubCommunity/LinkFree/issues/7913)) ([1d33148](https://github.com/EddieHubCommunity/LinkFree/commit/1d33148c7626df7f0ed70de0dbd2c93fb7ef21bc))
+* docs side nav for mobiles ([#8177](https://github.com/EddieHubCommunity/LinkFree/issues/8177)) ([3ab0b01](https://github.com/EddieHubCommunity/LinkFree/commit/3ab0b01ab9db601059bcef47bb5feebf9eca9237))
 
 
 
-## [1.149.2](https://github.com/EddieHubCommunity/LinkFree/compare/v1.149.1...v1.149.2) (2023-07-01)
-
-
-### Bug Fixes
-
-* profiles with no events ([#7906](https://github.com/EddieHubCommunity/LinkFree/issues/7906)) ([4a289b8](https://github.com/EddieHubCommunity/LinkFree/commit/4a289b8cf8b58af8aecf8ff76af6d24e68da4b03))
-
-
-
-## [1.149.1](https://github.com/EddieHubCommunity/LinkFree/compare/v1.149.0...v1.149.1) (2023-07-01)
+## [1.178.7](https://github.com/EddieHubCommunity/LinkFree/compare/v1.178.6...v1.178.7) (2023-08-22)
 
 
 ### Bug Fixes
 
-* random profile text ([#7905](https://github.com/EddieHubCommunity/LinkFree/issues/7905)) ([dd9b971](https://github.com/EddieHubCommunity/LinkFree/commit/dd9b9716788c301d6eaff4629b31aa8edf73d51e))
+* community resources to config array ([#8577](https://github.com/EddieHubCommunity/LinkFree/issues/8577)) ([ae545e8](https://github.com/EddieHubCommunity/LinkFree/commit/ae545e8a58a2547656a6cd2c029232e9d9e4f0f1))
 
 
 
-# [1.149.0](https://github.com/EddieHubCommunity/LinkFree/compare/v1.148.0...v1.149.0) (2023-07-01)
-
-
-### Features
-
-* testimonial ordering ([#7884](https://github.com/EddieHubCommunity/LinkFree/issues/7884)) ([d65ba48](https://github.com/EddieHubCommunity/LinkFree/commit/d65ba48937b542927cb9b46ea6a75a4244168c3e))
-
-
-
-# [1.148.0](https://github.com/EddieHubCommunity/LinkFree/compare/v1.147.10...v1.148.0) (2023-07-01)
+## [1.178.6](https://github.com/EddieHubCommunity/LinkFree/compare/v1.178.5...v1.178.6) (2023-08-22)
 
 
 ### Bug Fixes
 
-* docs links ([#7902](https://github.com/EddieHubCommunity/LinkFree/issues/7902)) ([1b9a529](https://github.com/EddieHubCommunity/LinkFree/commit/1b9a529f0117d92682c5c2a3780c42ff815d9154))
+* spacing between add repo form and repo list ([#8694](https://github.com/EddieHubCommunity/LinkFree/issues/8694)) ([9cc0624](https://github.com/EddieHubCommunity/LinkFree/commit/9cc0624c3a2bed5ebadd6e4bbdce4864f210678f))
 
 
-### Features
 
-* random profile ([#7900](https://github.com/EddieHubCommunity/LinkFree/issues/7900)) ([f2aed8d](https://github.com/EddieHubCommunity/LinkFree/commit/f2aed8dccba992e3bb889149854ded52b0283bb5)), closes [#7617](https://github.com/EddieHubCommunity/LinkFree/issues/7617) [#7558](https://github.com/EddieHubCommunity/LinkFree/issues/7558)
+## [1.178.5](https://github.com/EddieHubCommunity/LinkFree/compare/v1.178.4...v1.178.5) (2023-08-22)
+
+
+### Bug Fixes
+
+* notification removed after set time ([#8607](https://github.com/EddieHubCommunity/LinkFree/issues/8607)) ([a74cd9e](https://github.com/EddieHubCommunity/LinkFree/commit/a74cd9e95fede2e554344575b6572b93b218b4a8))
+
+
+
+## [1.178.4](https://github.com/EddieHubCommunity/LinkFree/compare/v1.178.3...v1.178.4) (2023-08-22)
+
+
+### Bug Fixes
+
+* missing items now have a space between ([#8676](https://github.com/EddieHubCommunity/LinkFree/issues/8676)) ([6c83c18](https://github.com/EddieHubCommunity/LinkFree/commit/6c83c1898be55055376157c00eea972a55f47430))
 
 
 

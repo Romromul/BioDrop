@@ -14,7 +14,7 @@ export default function DocsIndex() {
           name: "Quickstart forms",
           path: "/docs/quickstart-forms",
           description:
-            "The simpliest way to create your Profile is to use our Forms.",
+            "The simplest way to create your Profile is to use our Forms.",
           category: {
             name: "Beginner",
             color: "bg-green-100 text-green-800",
@@ -42,7 +42,7 @@ export default function DocsIndex() {
         },
         {
           name: "Social with Forms",
-          path: "/docs/how-to-guides/socials-forms",
+          path: "/docs/how-to-guides/socials-shortcuts-forms",
           description:
             "You can pin your links to the top of your Profile with Social Shortcuts",
           category: {
@@ -52,7 +52,7 @@ export default function DocsIndex() {
         },
         {
           name: "Local Development",
-          path: "/environment/local-development",
+          path: "/docs/environments/local-development",
           description:
             "Set up the LinkFree codebase on your computer using either a pre-built Docker image or by installing all the dependencies for full control over your local dev environment.",
           category: {
@@ -104,7 +104,7 @@ export default function DocsIndex() {
           </Link>{" "}
           on GitHub for more information.
         </p>
-        <div className="flex flex-grow flex-row">
+        <div className="flex flex-grow flex-col sm:flex-row">
           <SideNav navigation={navigation} />
           <div className="float-none my-0 max-w-[1440px]">
             {sections.map((section) => (
@@ -113,7 +113,7 @@ export default function DocsIndex() {
                 key={section.title}
               >
                 <div className="relative mx-auto max-w-lg divide-y-2 divide-primary-low dark:divide-primary-low-high lg:max-w-7xl">
-                  <div>
+                  <div className="mb-2">
                     <h2
                       className="text-3xl font-bold tracking-tight text-primary-high dark:text-primary-low sm:text-4xl"
                       id={section.title}
@@ -129,7 +129,7 @@ export default function DocsIndex() {
                       <Link
                         href={page.path}
                         key={page.name}
-                        className="border border-transparent hover:border hover:border-orange-600 transition-all duration-250 ease-linear rounded px-6 py-2 block"
+                        className="my-2 border border-transparent hover:border hover:border-orange-600 transition-all duration-250 ease-linear rounded px-6 py-2 block"
                       >
                         <div className="py-2">
                           {/* <span

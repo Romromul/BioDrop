@@ -3,11 +3,12 @@ import { useEffect, useState } from "react";
 import { authOptions } from "../../../api/auth/[...nextauth]";
 import { getServerSession } from "next-auth/next";
 
+import { clientEnv } from "@config/schemas/clientSchema";
 import logger from "@config/logger";
 import PageHead from "@components/PageHead";
 import Page from "@components/Page";
 import Button from "@components/Button";
-import Navigation from "@components/account/manage/navigation";
+import Navigation from "@components/account/manage/Navigation";
 import { getMilestoneApi } from "pages/api/account/manage/milestone/[[...data]]";
 import Input from "@components/form/Input";
 import UserMilestone from "@components/user/UserMilestone";
@@ -15,6 +16,8 @@ import Toggle from "@components/form/Toggle";
 import Notification from "@components/Notification";
 import Link from "@components/Link";
 import ConfirmDialog from "@components/ConfirmDialog";
+import IconSearch from "@components/IconSearch";
+import Textarea from "@components/form/Textarea";
 
 export async function getServerSideProps(context) {
   const session = await getServerSession(context.req, context.res, authOptions);
@@ -40,7 +43,7 @@ export async function getServerSideProps(context) {
   }
 
   return {
-    props: { milestone, BASE_URL: process.env.NEXT_PUBLIC_BASE_URL },
+    props: { milestone, BASE_URL: clientEnv.NEXT_PUBLIC_BASE_URL },
   };
 }
 
@@ -52,20 +55,17 @@ export default function ManageMilestone({ BASE_URL, milestone }) {
     message: "",
     additionalMessage: "",
   });
-  const [title, setTitle] = useState(
-    milestone.title || "Title of your Milestone"
-  );
-  const [description, setDescription] = useState(
-    milestone.description || "Description of your Milestone"
-  );
+  const [title, setTitle] = useState(milestone.title || "");
+  const [description, setDescription] = useState(milestone.description || "");
   const [url, setUrl] = useState(milestone.url || "");
-  const [icon, setIcon] = useState(milestone.icon || "FaGithub");
+  const [icon, setIcon] = useState(milestone.icon || "");
   const [date, setDate] = useState(milestone.date || "");
   const [isGoal, setIsGoal] = useState(milestone.isGoal ? true : false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    let alert = "created";
     let putMilestone = {
       title,
       description,
@@ -76,6 +76,7 @@ export default function ManageMilestone({ BASE_URL, milestone }) {
     };
     let apiUrl = `${BASE_URL}/api/account/manage/milestone/`;
     if (milestone._id) {
+      alert = "updated";
       putMilestone = { ...putMilestone, _id: milestone._id };
       apiUrl = `${BASE_URL}/api/account/manage/milestone/${milestone._id}`;
     }
@@ -99,14 +100,7 @@ export default function ManageMilestone({ BASE_URL, milestone }) {
       });
     }
 
-    Router.push(`${BASE_URL}/account/manage/milestone/${update._id}`);
-
-    return setShowNotification({
-      show: true,
-      type: "success",
-      message: "Milestone added/updated",
-      additionalMessage: "Your milestone has been added/updated successfully",
-    });
+    Router.push(`${BASE_URL}/account/manage/milestones?alert=${alert}`);
   };
 
   const deleteItem = async () => {
@@ -130,7 +124,7 @@ export default function ManageMilestone({ BASE_URL, milestone }) {
       });
     }
 
-    return Router.push(`${BASE_URL}/account/manage/milestones`);
+    return Router.push(`${BASE_URL}/account/manage/milestones?alert=deleted`);
   };
 
   useEffect(() => {
@@ -143,7 +137,7 @@ export default function ManageMilestone({ BASE_URL, milestone }) {
   return (
     <>
       <PageHead
-        title="Manage Milstone"
+        title="Manage Milestone"
         description="Here you can manage your LinkFree milestone"
       />
 
@@ -180,6 +174,7 @@ export default function ManageMilestone({ BASE_URL, milestone }) {
                       label="Milestone Title"
                       onChange={(e) => setTitle(e.target.value)}
                       value={title}
+                      placeholder="Title of your Milestone"
                       required
                       minLength="2"
                       maxLength="256"
@@ -189,9 +184,9 @@ export default function ManageMilestone({ BASE_URL, milestone }) {
                     </p>
                   </div>
                   <div className="mt-1 sm:col-span-2 sm:mt-0">
-                    <Input
+                    <Textarea
                       name="description"
-                      label="Description"
+                      placeholder="Description of your Milestone"
                       onChange={(e) => setDescription(e.target.value)}
                       value={description}
                       required
@@ -209,6 +204,7 @@ export default function ManageMilestone({ BASE_URL, milestone }) {
                       label="URL"
                       onChange={(e) => setUrl(e.target.value)}
                       value={url}
+                      placeholder="https://www.example.com"
                       minLength="2"
                       maxLength="256"
                     />
@@ -230,15 +226,7 @@ export default function ManageMilestone({ BASE_URL, milestone }) {
                     </p>
                   </div>
                   <div className="mt-1 sm:col-span-2 sm:mt-0">
-                    <Input
-                      name="icon"
-                      label="Icon"
-                      onChange={(e) => setIcon(e.target.value)}
-                      value={icon}
-                      required
-                      minLength="2"
-                      maxLength="32"
-                    />
+                    <IconSearch handleSelectedIcon={setIcon} selectedIcon={icon} />
                     <p className="text-sm text-primary-low-medium">
                       Search for available{" "}
                       <Link href="/icons" target="_blank">

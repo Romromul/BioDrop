@@ -5,10 +5,12 @@ import DocumentPlusIcon from "@heroicons/react/24/outline/DocumentPlusIcon";
 import logger from "@config/logger";
 import PageHead from "@components/PageHead";
 import Page from "@components/Page";
-import Navigation from "@components/account/manage/navigation";
+import Navigation from "@components/account/manage/Navigation";
 import { getEventsApi } from "pages/api/account/manage/events";
 import Button from "@components/Button";
 import UserEvents from "@components/user/UserEvents";
+import { useRouter } from "next/router";
+import Alert from "@components/Alert";
 
 export async function getServerSideProps(context) {
   const session = await getServerSession(context.req, context.res, authOptions);
@@ -37,6 +39,24 @@ export async function getServerSideProps(context) {
 }
 
 export default function ManageEvents({ events }) {
+  const router = useRouter();
+  const { alert } = router.query;
+
+  const alerts = {
+    deleted: {
+      type: "success",
+      message: "Event Deleted Successfully",
+    },
+    created: {
+      type: "success",
+      message: "Event Created Successfully",
+    },
+    updated: {
+      type: "success",
+      message: "Event Updated Successfully",
+    },
+  };
+
   return (
     <>
       <PageHead
@@ -45,14 +65,17 @@ export default function ManageEvents({ events }) {
       />
 
       <Page>
-        <Navigation />
+        {alert && (
+          <Alert type={alerts[alert].type} message={alerts[alert].message} />
+        )}
 
+        <Navigation />
         <Button href="/account/manage/event">
           <DocumentPlusIcon className="h-5 w-5 mr-2" />
           Add Event
         </Button>
 
-        <UserEvents events={events} manage={true} />
+        <UserEvents events={events} manage={true} filter="all" />
       </Page>
     </>
   );
