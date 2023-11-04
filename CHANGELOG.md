@@ -1,45 +1,45 @@
-## [1.178.8](https://github.com/EddieHubCommunity/LinkFree/compare/v1.178.7...v1.178.8) (2023-08-23)
+# [2.84.0](https://github.com/EddieHubCommunity/BioDrop/compare/v2.83.19...v2.84.0) (2023-11-01)
+
+
+### Features
+
+* admin list not enabled proiles ([#9709](https://github.com/EddieHubCommunity/BioDrop/issues/9709)) ([24bf515](https://github.com/EddieHubCommunity/BioDrop/commit/24bf5151222058841067311fa138c60dcd52ef05))
+
+
+
+## [2.83.19](https://github.com/EddieHubCommunity/BioDrop/compare/v2.83.18...v2.83.19) (2023-11-01)
 
 
 ### Bug Fixes
 
-* docs side nav for mobiles ([#8177](https://github.com/EddieHubCommunity/LinkFree/issues/8177)) ([3ab0b01](https://github.com/EddieHubCommunity/LinkFree/commit/3ab0b01ab9db601059bcef47bb5feebf9eca9237))
+* update dependencies ([#9639](https://github.com/EddieHubCommunity/BioDrop/issues/9639)) ([7518764](https://github.com/EddieHubCommunity/BioDrop/commit/7518764aa41133e8c5c959e7c5551b1a7dc881d9))
 
 
 
-## [1.178.7](https://github.com/EddieHubCommunity/LinkFree/compare/v1.178.6...v1.178.7) (2023-08-22)
-
-
-### Bug Fixes
-
-* community resources to config array ([#8577](https://github.com/EddieHubCommunity/LinkFree/issues/8577)) ([ae545e8](https://github.com/EddieHubCommunity/LinkFree/commit/ae545e8a58a2547656a6cd2c029232e9d9e4f0f1))
-
-
-
-## [1.178.6](https://github.com/EddieHubCommunity/LinkFree/compare/v1.178.5...v1.178.6) (2023-08-22)
+## [2.83.18](https://github.com/EddieHubCommunity/BioDrop/compare/v2.83.17...v2.83.18) (2023-10-31)
 
 
 ### Bug Fixes
 
-* spacing between add repo form and repo list ([#8694](https://github.com/EddieHubCommunity/LinkFree/issues/8694)) ([9cc0624](https://github.com/EddieHubCommunity/LinkFree/commit/9cc0624c3a2bed5ebadd6e4bbdce4864f210678f))
+* typo in footer ([#9685](https://github.com/EddieHubCommunity/BioDrop/issues/9685)) ([e7541b4](https://github.com/EddieHubCommunity/BioDrop/commit/e7541b4fa61f943cdf0f8e33ba73ec7ac1d6bc1f))
 
 
 
-## [1.178.5](https://github.com/EddieHubCommunity/LinkFree/compare/v1.178.4...v1.178.5) (2023-08-22)
-
-
-### Bug Fixes
-
-* notification removed after set time ([#8607](https://github.com/EddieHubCommunity/LinkFree/issues/8607)) ([a74cd9e](https://github.com/EddieHubCommunity/LinkFree/commit/a74cd9e95fede2e554344575b6572b93b218b4a8))
-
-
-
-## [1.178.4](https://github.com/EddieHubCommunity/LinkFree/compare/v1.178.3...v1.178.4) (2023-08-22)
+## [2.83.17](https://github.com/EddieHubCommunity/BioDrop/compare/v2.83.16...v2.83.17) (2023-10-31)
 
 
 ### Bug Fixes
 
-* missing items now have a space between ([#8676](https://github.com/EddieHubCommunity/LinkFree/issues/8676)) ([6c83c18](https://github.com/EddieHubCommunity/LinkFree/commit/6c83c1898be55055376157c00eea972a55f47430))
+* double border on input field in icons page ([#9663](https://github.com/EddieHubCommunity/BioDrop/issues/9663)) ([4f88584](https://github.com/EddieHubCommunity/BioDrop/commit/4f88584e72837e7daae9de66d2fe12b2f3fcacf0))
+
+
+
+## [2.83.16](https://github.com/EddieHubCommunity/BioDrop/compare/v2.83.15...v2.83.16) (2023-10-30)
+
+
+### Bug Fixes
+
+* icon alignment issue in tabs ([#9681](https://github.com/EddieHubCommunity/BioDrop/issues/9681)) ([41a40f9](https://github.com/EddieHubCommunity/BioDrop/commit/41a40f9ad0ff9baeee286bd0a5d68291d983c39c))
 
 
 
