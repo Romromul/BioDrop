@@ -29,6 +29,7 @@ test("Search works correctly", async ({ page }) => {
   // 3. type in search and check that user with the name exist and check a name doesn't exist
   const input = page.locator("[name='keyword']");
   await input.type("_test-profile-user-1");
+  await page.locator("[type='submit']").click();
 
   await expect(page.locator("main li")).toHaveCount(1);
 });
@@ -40,6 +41,7 @@ test("Search page has random results when no search term used", async ({
 
   const input = page.locator("[name='keyword']");
   await input.fill("");
+  await page.locator("[type='submit']").click();
 
   await expect(page.locator("main li")).toHaveCount(defaultUsers);
 });
@@ -51,6 +53,7 @@ test("Search page shows random results after typing 1 characters", async ({
 
   const input = page.locator("[name='keyword']");
   await input.type("e");
+  await page.locator("[type='submit']").click();
 
   await expect(page.locator("main li")).toHaveCount(defaultUsers);
 });
@@ -62,6 +65,7 @@ test("Search page shows results after typing 3 characters", async ({
 
   const input = page.locator("[name='keyword']");
   await input.type("aka");
+  await page.locator("[type='submit']").click();
 
   await expect(page.locator("main li")).toContainText(["aka"]);
 });
@@ -70,18 +74,20 @@ test("Search term persistence after navigating back", async ({ page }) => {
   // 1. Perform search
   await page.goto("/search");
   const input = page.locator("[name='keyword']");
-  const searchTerm = "eddiejaoude";
+  const searchTerm = "_test-profile-user-1";
+  const searchName = "Test User Name 1";
   await input.fill(searchTerm);
+  await page.locator("[type='submit']").click();
 
   // 2. Navigate to profile
-  await expect(page).toHaveURL("/search?userSearchParam=eddiejaoude");
+  await expect(page).toHaveURL(`/search?userSearchParam=${searchTerm}`);
   await page.waitForLoadState("networkidle");
-  await page.locator("h3:has-text('eddiejaoude')").click();
-  await page.waitForLoadState("networkidle");
+  await page.locator(`a h2:has-text('${searchTerm}')`).click();
+  await page.waitForURL(`/${searchTerm}`);
 
   // 3. Check if the profile is displayed
-  await expect(page).toHaveURL("/eddiejaoude");
-  await expect(page.locator("h1")).toHaveText("Eddie Jaoude");
+  await expect(page).toHaveURL(`/${searchTerm}`);
+  await expect(page.locator("h1")).toHaveText(`${searchName}`);
 
   // 4. Go back and check that search term is still here
   await page.goBack();
@@ -93,6 +99,7 @@ test("Search term persistence after navigating back", async ({ page }) => {
 });
 
 test("find the profile after providing concise name", async ({ page }) => {
+  const searchTerm = "_test-profile-user-1";
   // 1. Start from the homepage
   await page.goto("/");
 
@@ -104,12 +111,13 @@ test("find the profile after providing concise name", async ({ page }) => {
 
   // 3. find the input field and type the whole name
   const input = page.locator("[name='keyword']");
-  await input.fill("eddiejaoude");
+  await input.fill(searchTerm);
+  await page.locator("[type='submit']").click();
 
   // 4. select and click on the profile by matching name string
-  const profileHeader = page.locator("h3:has-text('eddiejaoude')");
+  const profileHeader = page.locator(`h2:has-text('${searchTerm}')`);
   const profileHeaderText = await profileHeader.innerText();
-  await expect(profileHeaderText).toContain("eddiejaoude");
+  await expect(profileHeaderText).toContain(searchTerm);
 });
 
 test.describe("accessibility tests (light)", () => {
